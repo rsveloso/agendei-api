@@ -21,10 +21,15 @@ router.get('/users/profile', jwt.ValidateToken, controllerUser.Profile);
 // router.get('/users/register', controllerUser.Listar);
 // router.put('/users/register/:id_user', controllerUser.Editar);
 
-
 // Reservas (appointments)...
 router.get('/appointments', jwt.ValidateToken, controllerAppointment.ListarByUser);
 router.post('/appointments', jwt.ValidateToken, controllerAppointment.Inserir);
 router.delete('/appointments/:id_apponitment', jwt.ValidateToken, controllerAppointment.Excluir);
+
+// Admin...
+router.post('/admin/register', controllerUser.InserirAdmin);
+router.post('/admin/login', controllerUser.LoginAdmin);
+// Reservas (appointments)
+router.get('/admin/appointments', jwt.ValidateToken, controllerAppointment.Listar);
 
 export default router;

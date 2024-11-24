@@ -1,8 +1,8 @@
 import repositoryAppointment from "../repositories/repository.appointment.js";
 
-async function Listar(id_user) {
+async function Listar(id_user, dt_start, dt_end, id_doctor) {
     
-    const appointments = await repositoryAppointment.Listar(id_user);
+    const appointments = await repositoryAppointment.Listar(id_user, dt_start, dt_end, id_doctor);
 
     return appointments;
 }

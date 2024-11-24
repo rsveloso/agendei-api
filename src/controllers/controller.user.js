@@ -15,6 +15,12 @@ async function Inserir(req, res) {
     res.status(201).json(user);
 }
 
+async function InserirAdmin(req, res) {
+    const {name, email, password} = req.body;
+    const user = await serviceUser.InserirAdmin(name, email, password);
+    res.status(201).json(user);
+}
+
 // async function Editar(req, res) {
 //     const {id_user} = req.params;
 //     const {name, email, password} = req.body;
@@ -34,6 +40,15 @@ async function Login(req, res) {
      return res.status(200).json(user);
 }
 
+async function LoginAdmin(req, res) {
+    const {email, password} = req.body;
+    const user = await serviceUser.LoginAdmin(email, password);
+    if(user.length === 0)
+        return res.status(401).json({message: "E-mail ou senha inválidos"});
+    else
+        return res.status(200).json(user);
+}
+
 async function Profile(req, res) {
 
     const id_user = req.id_user;
@@ -42,4 +57,4 @@ async function Profile(req, res) {
     res.status(200).json(user);
 }
 
-export default { Inserir, Login, Profile };
+export default { Inserir, Login, InserirAdmin, LoginAdmin, Profile };
