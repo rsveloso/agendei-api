@@ -1,0 +1,53 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Diretório do ambiente local
+.env
+
+# Cache do npm e yarn
+node_modules/
+.pnpm-debug.log*
+
+# Diretórios temporários
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Cache do build
+dist/
+build/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Test Coverage
+coverage/
+
+# Docker
+docker-compose.override.yml
+
+# Configuração de deploy
+.env.*
+.env.local
+
+# Arquivos do PM2 (gerenciamento de processos)
+pids/
+pm2-logs/
+
+# Outras configurações locais
+*.local
+*.cache
