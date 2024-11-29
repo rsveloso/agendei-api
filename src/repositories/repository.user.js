@@ -1,9 +1,9 @@
 import { query } from "../database/sqlite.js";
 
 // async function Listar() {
-//     const sql = `SELECT * FROM users`;
+//     const sql = `SELECT id_user, name, email FROM users order by name`;
 
-//     const users = await query(sql);
+//     const users = await query(sql, []);
 //     return users;
 // }
 

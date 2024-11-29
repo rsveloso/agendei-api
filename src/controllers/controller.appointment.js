@@ -19,6 +19,14 @@ async function Listar(req, res) {
     res.status(200).json(appointments);
 }
 
+// async function ListarId(req, res) {
+
+//     const id_appointment = req.params.id_appointment;
+//     const appointments = await serviceAppointment.ListarId(id_appointment);
+
+//     res.status(200).json(appointments);
+// }
+
 async function Inserir(req, res) {
     // const appointment = req.body;
 
@@ -32,14 +40,28 @@ async function Inserir(req, res) {
     res.status(201).json(appointment);
 }
 
-async function Excluir(req, res) {
 
-    const id_user = req.id_user;
-    const id_appointment = req.params.id_apponitment;
+// async function InserirAdmin(req, res) {
 
-    const appointment = await serviceAppointment.Excluir(id_user, id_appointment);
+//     const { id_user, id_doctor, id_service,
+//         booking_date, booking_hour } = req.body;
 
-    res.status(200).json(appointment);
-}
+//     const appointment = await serviceAppointment.Inserir(id_user,
+//         id_doctor, id_service, booking_date, booking_hour);
 
-export default { Listar, ListarByUser, Inserir, Excluir };
+//     res.status(201).json(appointment);
+// }
+
+// async function EditarAdmin(req, res) {
+
+//     const id_appointment = req.params.id_appointment;
+//     const { id_user, id_doctor, id_service,
+//         booking_date, booking_hour } = req.body;
+
+//     const appointment = await serviceAppointment.Editar(id_appointment, id_user,
+//         id_doctor, id_service, booking_date, booking_hour);
+
+//     res.status(200).json(appointment);
+// }
+
+export default { Listar, ListarByUser, Inserir };
